@@ -59,6 +59,7 @@ This project does **not** provide a detailed guide for installing macOS, you may
       - [Follow OpenCore's guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/)
       - [macOShome](https://macoshome.com/hackintosh/uefistart/17045.html)(Recommended to Chinese user)
       - [Mist](https://github.com/ninxsoft/Mist)
+      - [gibMacOS](https://github.com/corpnewt/gibMacOS)
       - etc.
    - Create a bootable USB drive using a tool like Ventoy or balenaEtcher.
    - Replace the USB drive's EFI partition with the release file.
