@@ -1,5 +1,7 @@
 # Hackintosh for MateBook 14 2019 👨‍💻
 
+![matebook14](src/matebook14.svg)
+
 ## Description 📄
 
 🚀 Transform your MateBook 14 2019 into a Hackintosh and experience macOS on your own hardware setup! Dive into the world of Hackintoshing with your MateBook's specifications:
@@ -14,6 +16,7 @@
 | Audio             | Realtek ALC256        |
 | LCD               | 2160x1440 resolution  |
 | BIOS              | Version 1.26          |
+| Bootloader        | OpenCore 0.9.4        |
 
 This project brings to life a fully functional Hackintosh with key features already driven:
 
