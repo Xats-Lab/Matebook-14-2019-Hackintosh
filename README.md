@@ -80,6 +80,7 @@ This project does **not** provide a detailed guide for installing macOS, you may
 4. **Post-Installation:**
    - After installation, mount the EFI partition, copy the release file to the mounted hard disk EFI partition. Next time boot without the USB drive, just choose macOS (without `(External)` tag).
    - Fix iServices(if need) by following [Dortania's guide](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html).
+   - Enable HiDPI by following [this guide](https://github.com/bbhardin/A-Guide-to-MacOS-Scaled-Resolutions) or referring to andrewlsa's [project](https://github.com/andrewlsa/Matebook-14-2019-Hackintosh).
    - Configure your system according to your preferences.
 
 5. **Troubleshooting:**
