@@ -1,7 +1,5 @@
 # Hackintosh for MateBook 14 2019 👨‍💻
 
-![matebook14](src/matebook14.svg)
-
 ## Description 📄
 
 🚀 Transform your MateBook 14 2019 into a Hackintosh and experience macOS on your own hardware setup! Dive into the world of Hackintoshing with your MateBook's specifications:
@@ -80,26 +78,30 @@ This project does **not** provide a detailed guide for installing macOS, you may
    - When rebooting in the installation process, boot from the USB drive again, but this time choose your macOS installation(without `(External)` tag).
 
 4. **Post-Installation:**
-   - After installation, mount the EFI partition, copy the release file to the mounted hard disk EFI partition 
-   - boot without the USB drive again, but this time choose your macOS (without `(External)` tag).
+   - After installation, mount the EFI partition, copy the release file to the mounted hard disk EFI partition. Next time boot without the USB drive, just choose macOS (without `(External)` tag).
+   - Fix iServices(if need) by following [Dortania's guide](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html).
    - Configure your system according to your preferences.
 
 5. **Troubleshooting:**
-   - If you encounter issues, refer to online Hackintosh communities for solutions.
+   - Reading the [OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/) and [OpenCore Post-Install Guide](https://dortania.github.io/OpenCore-Post-Install/) is highly recommended.
+   - If you encounter other issues, refer to online Hackintosh communities for solutions.
    - Be prepared to tweak settings and try different configurations.
    - Open an issue here.
 
 ## Acknowledgments 👏
 
-This project wouldn't have been possible without the invaluable contributions from the following projects:
-
+Thanks to
+- Apple's [macOS](https://www.apple.com/macos/)(*macOS Ventura 13.5.1*)
+- andrewlsa's [Matebook-14-2019-Hackintosh](https://github.com/andrewlsa/Matebook-14-2019-Hackintosh)(*Basic AICP file*)
 - [OpenCore-Install-Guide](https://github.com/dortania/OpenCore-Install-Guide)(*Recommended to read*)
 - [Acidanthera](https://github.com/acidanthera)(*OpenCore and Core Kexts*)
 - [OpenIntelWireless](https://github.com/OpenIntelWireless)(*Kexts for Intel bluetooth and wifi*)
+- [OCAuxiliaryTools](https://github.com/ic005k/OCAuxiliaryTools)(*Useful tools*)
 
 We extend our heartfelt thanks to the creators and maintainers of these repositories for their dedication and effort in the Hackintosh community.
 
-Related repositories:
+Related nice repositories:
+- [andrewlsa/Matebook-14-2019-Hackintosh](https://github.com/andrewlsa/Matebook-14-2019-Hackintosh)
 - [ske1996/matebook-13and14-OpenCore-Hackintosh](https://github.com/ske1996/matebook-13and14-OpenCore-Hackintosh)
 - [frezs/MateBook14-Hackintosh](https://github.com/frezs/MateBook14-Hackintosh)
 - [laozhiang/MateBook_13_14_XPro-Hackintosh](https://github.com/laozhiang/MateBook_13_14_XPro-Hackintosh)
