@@ -19,20 +19,16 @@ jobs:
         id: get-current-date
         run: |
           echo "current_date=$(date +'%y%m%d')" >> $GITHUB_OUTPUT
-        shell: bash
 
       - name: Create ZIP archive
         run: |
-          # Create a ZIP archive of the EFI folder
-          zip -r EFI-${{ github.ref }}-${{ steps.get-current-date.outputs.current_date }}.zip ./EFI
-        working-directory: ${{ github.workspace }}
+          zip -r EFI-${{ github.action_ref }}-${{ steps.get-current-date.outputs.current_date }}.zip ./EFI
 
       - name: Generate Release Notes
         id: generate-release-notes
         run: |
           RELEASE_NOTES=$(git log --merges --oneline --format="- %s (%h)" $(git describe --tags --abbrev=0)..HEAD)
           echo "release_notes=$RELEASE_NOTES" >> $GITHUB_OUTPUT
-        shell: bash
 
       - name: Release Asset
         id: upload-release-asset
