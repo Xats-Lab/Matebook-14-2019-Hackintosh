@@ -6,11 +6,10 @@ on:
       - 'v*'
 
 jobs:
-  permissions:
-    contents: write
-    
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout code
