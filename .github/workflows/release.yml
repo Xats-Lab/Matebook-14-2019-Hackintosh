@@ -22,7 +22,7 @@ jobs:
 
       - name: Create ZIP archive
         run: |
-          zip -r EFI-${{ github.action_ref }}-${{ steps.get-current-date.outputs.current_date }}.zip ./EFI
+          zip -r EFI-${{ github.ref_name }}-${{ steps.get-current-date.outputs.current_date }}.zip ./EFI
 
       - name: Generate Release Notes
         id: generate-release-notes
@@ -34,6 +34,6 @@ jobs:
         id: upload-release-asset
         uses: softprops/action-gh-release@v1
         with:
-          name: Release ${{ github.action_ref }}
+          name: Release ${{ github.ref_name }}
           body: ${{ steps.generate-release-notes.outputs.release_notes }}
-          files: EFI-${{ github.action_ref }}-${{ steps.get-current-date.outputs.current_date }}.zip
+          files: EFI-${{ github.ref_name }}-${{ steps.get-current-date.outputs.current_date }}.zip
