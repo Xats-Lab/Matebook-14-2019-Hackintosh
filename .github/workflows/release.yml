@@ -1,0 +1,61 @@
+name: Create Release on Tag Push
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create ZIP archive
+        run: |
+          # Create a ZIP archive of the EFI folder
+          zip -r EFI.zip ./EFI
+        working-directory: ${{ github.workspace }}
+
+      - name: Generate Release Notes
+        id: generate-release-notes
+        run: |
+          # Generate release notes from commit history
+          RELEASE_NOTES=$(git log --merges --oneline --format="- %s (%h)" $(git describe --tags --abbrev=0)..HEAD)
+          echo "::set-output name=release_notes::$RELEASE_NOTES"
+        shell: bash
+
+      - name: Get Current Date
+        id: get-current-date
+        run: |
+          echo "::set-output name=current_date::$(date +'%y%m%d')"
+        shell: bash
+
+      - name: Upload ZIP as Release Asset
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ github.event.repository.releases_url }}
+          asset_path: ./EFI.zip
+          asset_name: "EFI-${{ github.ref }}-${{ steps.get-current-date.outputs.current_date }}.zip"
+          asset_content_type: application/zip
+
+      - name: Create Release
+        id: create-release
+        uses: actions/create-release@v1
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: ${{ steps.generate-release-notes.outputs.release_notes }}
+          draft: false
+          prerelease: false
+
+      - name: Attach Uploaded Asset to Release
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ steps.create-release.outputs.upload_url }}
+          asset_path: ./EFI.zip
+          asset_name: "EFI-${{ github.ref }}-${{ steps.get-current-date.outputs.current_date }}.zip"
+          asset_content_type: application/zip
