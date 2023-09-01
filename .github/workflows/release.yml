@@ -34,6 +34,6 @@ jobs:
         id: upload-release-asset
         uses: softprops/action-gh-release@v1
         with:
-          name: Release ${{ github.ref }}
+          name: Release ${{ github.action_ref }}
           body: ${{ steps.generate-release-notes.outputs.release_notes }}
-          files: EFI-${{ github.ref }}-${{ steps.get-current-date.outputs.current_date }}.zip
+          files: EFI-${{ github.action_ref }}-${{ steps.get-current-date.outputs.current_date }}.zip
