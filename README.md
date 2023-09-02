@@ -59,7 +59,7 @@ This project does **not** provide a detailed guide for installing macOS, you may
       - [Download-macOS](https://github.com/Comp-Labs/Download-macOS)
       - [Follow OpenCore's guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/)
       - [macOShome](https://macoshome.com/hackintosh/uefistart/17045.html)(Recommended to Chinese user)
-      - [Mist](https://github.com/ninxsoft/Mist)
+      - [Mist](https://github.com/ninxsoft/Mist)(If you have a real Mac, use this)
       - [gibMacOS](https://github.com/corpnewt/gibMacOS)
       - etc.
    - Create a bootable USB drive using a tool like Ventoy or balenaEtcher.
